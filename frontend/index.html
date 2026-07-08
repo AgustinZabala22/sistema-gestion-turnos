@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Turnos</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-content">
+
+            <h1>Sistema de Turnos</h1>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+                onclick="logout()"
+                style="display:none"
+            >
+                Cerrar Sesión
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- LOGIN -->
+    <div id="loginview" class="card login-card">
+
+        <h2>Iniciar Sesión</h2>
+
+        <form>
+
+            <label>Ingrese su mail</label>
+            <input id="loginEmail" type="email" required>
+
+            <label>Ingrese su contraseña</label>
+            <input id="loginPassword" type="password" required>
+
+        </form>
+
+        <button onclick="login()">
+            Iniciar Sesión
+        </button>
+
+        <div class="extra-link">
+            <p>
+                ¿No tienes una cuenta?
+                <button onclick="mostrarVista('registerView')">
+                    Registrarse
+                </button>
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- REGISTER -->
+    <div id="registerView" class="card login-card" style="display:none">
+
+        <h2>Registro</h2>
+
+        <p>Regístrate para tener una cuenta</p>
+
+        <form>
+
+            <label>Ingrese su nombre</label>
+            <input id="regNombre" type="text" required>
+
+            <label>Ingrese su rol</label>
+
+            <select id="regRol">
+                <option value="usuario">Usuario</option>
+                <option value="profesional">Profesional</option>
+            </select>
+
+            <label>Ingrese su mail</label>
+            <input id="regEmail" type="email" required>
+
+            <label>Ingrese su contraseña</label>
+            <input id="regPassword" type="password" required>
+
+        </form>
+
+        <button onclick="registrarse()">
+            Registrarse
+        </button>
+
+    </div>
+
+
+    <!-- USER VIEW -->
+    <div id="userView" class="home" style="display:none">
+
+        <div class="main-content">
+
+            <h2>Bienvenido Usuario</h2>
+
+            <div class="container">
+
+                <!-- SOLICITAR -->
+                <div class="card-section">
+
+                    <h3>Solicitar Turno</h3>
+
+                    <!-- PROFESIONAL -->
+                    <label>Mail del profesional</label>
+                    <input id="emailProfesional" type="email">
+
+                    <!-- FECHA -->
+                    <label>Fecha</label>
+                    <input id="fechaTurno" type="date">
+
+                    <!-- HORARIO -->
+                    <label>Horario</label>
+
+                    <select id="horaTurno"> </select>
+
+                    <button onclick="solicitarTurno()">
+                        Solicitar Turno
+                    </button>
+
+                </div>
+
+
+                <!-- MIS TURNOS -->
+                <div class="card-section">
+
+                    <h3>Mis Turnos</h3>
+
+                    <button onclick="verMisTurnos()">
+                        Ver Mis Turnos
+                    </button>
+
+                    <div id="misTurnosList"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFESIONAL VIEW -->
+    <div id="profesionalView" class="home" style="display:none">
+
+        <div class="main-content">
+
+            <h2>Bienvenido Profesional</h2>
+
+            <div class="container">
+
+                <div class="card-section">
+
+                    <h3>Turnos Solicitados</h3>
+
+                    <button onclick="verTurnosSolicitados()">
+                        Ver Turnos Solicitados
+                    </button>
+
+                    <div id="turnosSolicitadosList"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
