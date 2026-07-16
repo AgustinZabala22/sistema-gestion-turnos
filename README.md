@@ -48,6 +48,24 @@ El proyecto está dividido en dos partes:
 6. Una vez aceptado el turno, el profesional puede marcarlo como atendido.
 7. El usuario puede cancelar un turno pendiente.
 
+## Capturas
+
+### Inicio de sesión
+
+![Login](screenshots/login.jpg)
+
+### Registro
+
+![Registro](screenshots/registro.jpg)
+
+### Vista del usuario
+
+![Usuario](screenshots/usuario.jpg)
+
+### Vista del profesional
+
+![Profesional](screenshots/profesional.jpg)
+
 ## Instalación y ejecución
 
 ### Requisitos
